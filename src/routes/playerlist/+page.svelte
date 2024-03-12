@@ -27,6 +27,6 @@ const tableSimple: TableSource = {
 };
 </script>
 
-<div class="py-4 pl-32 pr-6"><Table source={tableSimple} interactive={true}/></div>
+<div class="py-4"><Table source={tableSimple} interactive={true}/></div>
 
 

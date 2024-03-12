@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+
 import type { CustomThemeConfig } from '@skeletonlabs/tw-plugin';
-
-
-
-
 
 export const customTheme: CustomThemeConfig = {
     name: 'custom-theme',
@@ -106,14 +103,6 @@ export const customTheme: CustomThemeConfig = {
 		
 	}
 }
-
-// export const {
-// 	properties: {
-// 		'--theme-font-family-base': fontFamilyBase,
-// 		'--theme-font-color-base': fontColorBase,
-// 		// Add more theme properties as needed
-// 	}
-// } = customTheme;
 
 export const fontFamilyBase = '--theme-font-family-base';
 export const fontColorBase = '--theme-font-color-base'

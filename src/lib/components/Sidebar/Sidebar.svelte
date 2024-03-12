@@ -11,9 +11,9 @@
 			end: 'right-0 lg:left-0'
 		},
 		container: `pb-32 lg:pb-12`,
-		close: `duration-700 ease-out hidden transition-all lg:w-24 z-1`,
-		default: `h-screen overflow-y-auto top-0 lg:block `,
-		open: `duration-500 ease-in transition-all w-8/12 z-1 sm:w-5/12 md:w-64`
+		close: `duration-700 ease-out hidden transition-all lg:w-24 z-1 shadow-lg`,
+		default: `h-screen overflow-y-auto top-0 lg:block shadow-lg`,
+		open: `duration-500 ease-in transition-all w-8/12 z-1 sm:w-5/12 md:w-64 shadow-lg`
 	};
 
 
