@@ -1,7 +1,4 @@
 <script>
-
-
-
 	import { AppRail, AppRailAnchor, AppRailTile } from "@skeletonlabs/skeleton";
     let currentTile = 0;
 </script>

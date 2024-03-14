@@ -22,7 +22,7 @@
 	  </svelte:fragment>
 	<span>Times</span>
 </TabAnchor>
-	<TabAnchor class="border-2 borde overflow-y-auto absolute" href="/" selected={$page.url.pathname === '/'} style="transform: translateY(-10px);">
+	<TabAnchor class="border-2 rounded-2xl shadow-lg border-white overflow-y-auto absolute bg-green-400 text-black" href="/" selected={$page.url.pathname === '/'} style="transform: translateY(-15px);">
 		<svelte:fragment slot="lead"><div class="text-center align-center flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
 			<path d="M5.625 3.75a2.625 2.625 0 1 0 0 5.25h12.75a2.625 2.625 0 0 0 0-5.25H5.625ZM3.75 11.25a.75.75 0 0 0 0 1.5h16.5a.75.75 0 0 0 0-1.5H3.75ZM3 15.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75ZM3.75 18.75a.75.75 0 0 0 0 1.5h16.5a.75.75 0 0 0 0-1.5H3.75Z" />
 		  </svg>

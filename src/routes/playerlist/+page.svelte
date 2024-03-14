@@ -1,11 +1,11 @@
 <script lang="ts">
     import type { PageData } from '../player/$types';
-    import { Table, tableMapperValues } from '@skeletonlabs/skeleton';
-    import type { TableSource } from '@skeletonlabs/skeleton';
-    import { LightSwitch } from '@skeletonlabs/skeleton';
+    import { Table, tableMapperValues, getDrawerStore, getModalStore } from '@skeletonlabs/skeleton';
+    import type { TableSource, DrawerSettings, ModalSettings } from '@skeletonlabs/skeleton';
     export let data: PageData;
-
-
+	import { isMobile } from "$lib/stores/ui";
+	const drawerStore = getDrawerStore();
+	const modalStore = getModalStore();
     const sourceData = [
 	{ position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
 	{ position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -25,8 +25,55 @@ const tableSimple: TableSource = {
 	// Optional: A list of footer labels.
 	foot: ['Total', '', '<code class="code">5</code>']
 };
+
+const drawerSettings: DrawerSettings = {
+	id: 'example-3',
+	// Provide your property overrides:
+	bgDrawer: 'variant-ghost-primary text-white',
+	bgBackdrop: $isMobile ? 'bg-gradient-to-tr from-zinc-500/90 via-slate-500/50 to-indigo-500/50' : 'bg-gradient-to-tr from-indigo-500/90 via-slate-500/50 to-zinc-500/50',
+	width: 'w-[390px] md:w-[680px]',
+	padding: 'p-4',
+	rounded: 'rounded-xl',
+	position: $isMobile ? 'bottom' : 'right'
+};
+
+const modal: ModalSettings = {
+	type: 'alert',
+	// Data
+	title: 'Example Alert',
+	body: 'This is an example modal.',
+	image: 'https://i.imgur.com/WOgTG96.gif',
+};
+
+function handleDrawer(){
+	console.log("entrei");
+	drawerStore.open(drawerSettings);
+}
+
+
 </script>
 
-<div class="py-4"><Table source={tableSimple} interactive={true}/></div>
+<svelte:head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</svelte:head>
+
+<button type="button" class="btn variant-ghost-primary shadow-sm" >
+	<span class="material-symbols-outlined">
+		add
+		</span>
+	<span class="font-bold">Adicionar</span>
+</button>
+<button type="button" class="btn variant-outline-primary shadow-sm" on:click={handleDrawer}>
+	<span class="material-symbols-outlined">
+		filter_list
+		</span>
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<span class="font-bold">Filtro</span>
+</button>
+
+
+<div class="py-4"><Table source={tableSimple} interactive={true} class="shadow-lg"/></div>
 
 
