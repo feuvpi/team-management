@@ -46,9 +46,14 @@ const modal: ModalSettings = {
 };
 
 function handleDrawer(){
-	console.log("entrei");
 	drawerStore.open(drawerSettings);
 }
+
+function handleModal(){
+	console.log("entrei");
+	modalStore.trigger(modal);
+}
+
 
 
 </script>
@@ -58,7 +63,7 @@ function handleDrawer(){
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </svelte:head>
 
-<button type="button" class="btn variant-ghost-primary shadow-sm" >
+<button type="button" class="btn variant-ghost-primary shadow-sm" on:click={handleModal}>
 	<span class="material-symbols-outlined">
 		add
 		</span>
