@@ -12,7 +12,7 @@
 		},
 		container: `pb-32 lg:pb-12`,
 		close: `duration-700 ease-out hidden transition-all lg:w-24 z-1 shadow-lg`,
-		default: `h-screen overflow-y-auto top-0 lg:block shadow-lg`,
+		default: `h-screen overflow-y-auto top-0 lg:block shadow-lg transform skew-x-1`,
 		open: `duration-500 ease-in transition-all w-8/12 z-1 sm:w-5/12 md:w-64 shadow-lg`
 	};
 
@@ -31,7 +31,7 @@
 <aside
 	class={`${style.default} ${style.mobileOrientation[mobileOrientation]}
        ${$sidebarOpen ? style.open : style.close} scrollbar`}
-	   style="font-family: {fontFamilyBase}; color: rgba({fontColorBase}, 1);"
+	   style="font-family: {fontFamilyBase}; color: rgba({fontColorBase}, 1); box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1);"
 >
 	<div class={style.container}>
 		<!-- <SidebarHeader /> -->

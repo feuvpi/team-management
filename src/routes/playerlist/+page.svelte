@@ -6,22 +6,62 @@
 	import { isMobile } from "$lib/stores/ui";
 	const drawerStore = getDrawerStore();
 	const modalStore = getModalStore();
-    const sourceData = [
-	{ position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-	{ position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-	{ position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-	{ position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-	{ position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
+	const sourceData = [
+    { 
+		position: 1,
+        nome: 'Cristiano Ronaldo', 
+        nascimento: '1985-02-05', 
+        idade: 39, 
+        posicao: 'Forward', 
+        peso: 83, 
+        pe: 'Right'
+    },
+    { 
+		position: 2,
+        nome: 'Lionel Messi', 
+        nascimento: '1987-06-24', 
+        idade: 36, 
+        posicao: 'Forward', 
+        peso: 72, 
+        pe: 'Left'
+    },
+    { 
+		position: 3,
+        nome: 'Neymar Jr', 
+        nascimento: '1992-02-05', 
+        idade: 32, 
+        posicao: 'Forward', 
+        peso: 68, 
+        pe: 'Right'
+    },
+    { 
+		position: 4,
+        nome: 'Virgil van Dijk', 
+        nascimento: '1991-07-08', 
+        idade: 33, 
+        posicao: 'Defender', 
+        peso: 92, 
+        pe: 'Right'
+    },
+    { 
+		position: 5,
+        nome: 'Kevin De Bruyne', 
+        nascimento: '1991-06-28', 
+        idade: 33, 
+        posicao: 'Midfielder', 
+        peso: 70, 
+        pe: 'Right'
+    }
 ];
 
 
 const tableSimple: TableSource = {
 	// A list of heading labels.
-	head: ['Name', 'Symbol', 'Weight'],
+	head: ['Nome', 'Nascimento', 'Idade', "Posicao", "Peso", "Pe"],
 	// The data visibly shown in your table body UI.
-	body: tableMapperValues(sourceData, ['name', 'symbol', 'weight']),
+	body: tableMapperValues(sourceData, ['Nome', 'Nascimento', 'Idade', "Posicao", "Peso", "Pe"]),
 	// Optional: The data returned when interactive is enabled and a row is clicked.
-	meta: tableMapperValues(sourceData, ['position', 'name', 'symbol', 'weight']),
+	meta: tableMapperValues(sourceData, ['Nome', 'Nascimento', 'Idade', "Posicao", "Peso", "Pe"]),
 	// Optional: A list of footer labels.
 	foot: ['Total', '', '<code class="code">5</code>']
 };
@@ -79,6 +119,6 @@ function handleModal(){
 </button>
 
 
-<div class="py-4"><Table source={tableSimple} interactive={true} class="shadow-lg"/></div>
+<div class="py-4 pr-8"><Table source={tableSimple} interactive={true} class="shadow-lg"/></div>
 
 
