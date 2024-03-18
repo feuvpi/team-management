@@ -1,10 +1,10 @@
 <script lang="ts">
 	 import { onMount } from 'svelte';
 	import '../app.postcss';
-	import Sidebar from '$lib/components/Sidebar/Sidebar.svelte'
+	import AppRail from '$lib/components/AppRail.svelte'
 	import Topbar from '$lib/components/Topbar.svelte'
 	import Navigation from '$lib/components/Navigation.svelte'
-	import { AppShell, AppBar, initializeStores, Drawer, getDrawerStore, Modal, getModalStore } from '@skeletonlabs/skeleton';
+	import { AppShell, initializeStores, Drawer, getDrawerStore, Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import type { LayoutData } from './$types';
 	import { isMobile } from "../lib/stores/ui";
 	export let data: LayoutData;
@@ -47,7 +47,7 @@ onMount(() => {
 		<Topbar/></svelte:fragment
 	>
 	<AppShell class="flex flex-row">
-		<svelte:fragment slot="sidebarLeft"><Sidebar /></svelte:fragment>
+		<svelte:fragment slot="sidebarLeft"><AppRail /></svelte:fragment>
 		<!-- (sidebarRight) -->
 		<!-- (pageHeader) -->
 		<!-- Router Slot -->
@@ -73,7 +73,7 @@ onMount(() => {
 		<Topbar/></svelte:fragment
 	>
 	<AppShell class="flex flex-row">
-		<svelte:fragment slot="sidebarLeft"><Sidebar /></svelte:fragment>
+		<svelte:fragment slot="sidebarLeft"><AppRail /></svelte:fragment>
 		<!-- (sidebarRight) -->
 		<!-- (pageHeader) -->
 		<!-- Router Slot -->
